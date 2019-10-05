@@ -4,7 +4,10 @@
 		<title>Ken Morton Jr</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<script src="assets/js/popper.js"></script>
+		<script src="assets/js/tippy.js"></script>
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/light-border.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -22,10 +25,10 @@
 						</header>
 						<footer>
 							<ul class="icons">
-								<li><a href="https://github.com/kjmj" class="icon brands fa-github" title="GitHub" target="_blank">GitHub</a></li>
-								<li><a href="assets/Kenneth Morton Jr Resume.pdf" class="icon fa-file-alt" title="Resume" target="_blank">Resume</a></li>
-								<li><a href="https://www.linkedin.com/in/kenneth-morton-jr-910bb4149" class="icon brands fa-linkedin" title="LinkedIn" target="_blank">LinkedIn</a></li>
-								<li><a href="mailto:kmorton15@gmail.com" class="icon solid fa-envelope" title="Email">Email</a></li>
+								<li><a href="https://github.com/kjmj" class="icon brands fa-github" id="github" target="_blank">GitHub</a></li>
+								<li><a href="assets/Kenneth Morton Jr Resume.pdf" class="icon fa-file-alt" id="resume" target="_blank">Resume</a></li>
+								<li><a href="https://www.linkedin.com/in/kenneth-morton-jr-910bb4149" class="icon brands fa-linkedin" id="linkedin" target="_blank">LinkedIn</a></li>
+								<li><a href="mailto:kmorton15@gmail.com" class="icon solid fa-envelope" id="email">Email</a></li>
 							</ul>
 						</footer>
 					</section>
@@ -45,6 +48,15 @@
 					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
+
+				// Tooltip Configuration
+				function tooltipOptions(iconName) {
+					return {content: iconName, placement: 'bottom', theme: 'light-border'}
+				}
+				tippy('#github', tooltipOptions("GitHub"));
+				tippy('#resume', tooltipOptions("Resume"));
+				tippy('#linkedin', tooltipOptions("LinkedIn"));
+				tippy('#email', tooltipOptions("Email"));
 			</script>
 
 	</body>
