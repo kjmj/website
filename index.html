@@ -14,7 +14,7 @@
 			<div id="wrapper">
 					<section id="main">
 						<header>
-							<span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
+							<span class="avatar"><img id="avatar-img" src="images/avatar.jpg" alt="" /></span>
 							<h1>Ken Morton Jr</h1>
 							<p>Founding Engineer <a href="https://www.trender.ai" target="_blank">@trender.ai</a></p>
 						</header>
@@ -38,6 +38,10 @@
 					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
+
+				// Ensure image isnt cached
+				document.getElementById("avatar-img").attributes.src.value += "?" + new Date().valueOf();
+
 
 				// Tooltip Configuration
 				function tooltipOptions(iconName) {
